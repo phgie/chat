@@ -33,3 +33,9 @@ Domain object handling messaging content
 #### WebSocketConfiguration.class
 Enables a message broker for topics (global communication) and queues (user-to-user configuration).
 
+#### CustomerSupportEventListener.class
+Handles events for new client connections and broadcasts a message to a topic, agents should subscribe to
+
+#### CustomerSupportController.class
+Handles user to user communication via messages
+
