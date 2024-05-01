@@ -11,3 +11,14 @@ Talking points / topics to be considered:
 - How do they interact? 
 - How does the frontend interact with your classes? 
 - Which enhancements come to your mind when talking about chat software solutions?
+
+---
+
+## Simple Customer Chat Application (Backend)
+Simple implementation for a messaging backend. Clients can use a frontend application (i.e. JavaScript Website) to call
+messaging URIs of the backend
+
+### Features 
+- Clients connect to the backend through the backend message broker
+- The connection is broadcast to all support agents
+- An agent can initiate a private chat session with a specific user
