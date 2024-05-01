@@ -27,5 +27,9 @@ messaging URIs of the backend
 This example uses Java Websockets for message handling. Spring (Boot) Configuration is used where possible to keep the
 application code light weight and manual configuration to a minimum.
 
+#### ChatMessage.class
+Domain object handling messaging content
+
 #### WebSocketConfiguration.class
 Enables a message broker for topics (global communication) and queues (user-to-user configuration).
+
