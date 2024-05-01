@@ -14,35 +14,28 @@ Talking points / topics to be considered:
 
 ---
 
-## Simple Customer Chat Application (Backend)
+# Simple Customer Chat Application (Backend)
 Simple implementation for a messaging backend. Clients can use a frontend application (i.e. JavaScript Website) to call
 messaging URIs of the backend
 
-### Features 
+## Features 
 - Clients connect to the backend through the backend message broker
 - The connection is broadcast to all support agents
 - An agent can initiate a private chat session with a specific user
 
-### Objects and Classes
+## Objects and Classes
 This example uses Java Websockets for message handling. Spring (Boot) Configuration is used where possible to keep the
 application code light weight and manual configuration to a minimum.
 
-#### ChatMessage.class
-Domain object handling messaging content
+- `ChatMessage.class` Domain object handling messaging content
+- `WebSocketConfiguration.class` Enables a message broker for topics (global communication) and queues (user-to-user configuration).
+- `CustomerSupportEventListener.class` Handles events for new client connections and broadcasts a message to a topic, agents should subscribe to
+- `CustomerSupportController.class` Handles user to user communication via messages
 
-#### WebSocketConfiguration.class
-Enables a message broker for topics (global communication) and queues (user-to-user configuration).
-
-#### CustomerSupportEventListener.class
-Handles events for new client connections and broadcasts a message to a topic, agents should subscribe to
-
-#### CustomerSupportController.class
-Handles user to user communication via messages
-
-### How do classes interact?
+## How do classes interact?
 Backend classes interact with each other through Spring Boot functionality.
 
-### How does the frontend interact with the backend?
+## How does the frontend interact with the backend?
 Since communication is handled through WebSockets over HTTP, the frontend handling client communication needs to
 address certain endpoints of the backend API.
 
