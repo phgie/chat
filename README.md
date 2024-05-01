@@ -39,3 +39,29 @@ Handles events for new client connections and broadcasts a message to a topic, a
 #### CustomerSupportController.class
 Handles user to user communication via messages
 
+### How do classes interact?
+Backend classes interact with each other through Spring Boot functionality.
+
+### How does the frontend interact with the backend?
+Since communication is handled through WebSockets over HTTP, the frontend handling client communication needs to
+address certain endpoints of the backend API.
+
+- All clients connect to the backend via Sockets (i.e. SockJs)
+- Customer service agent clients must subscribe to topic ```/chat/topic/support``` to be notified of new customers connections
+- All clients can send messages though API endpoint ```/chat/message``` and must include a valid ChatMessage JSON:
+```json
+{
+  "userFrom": "Sender",
+  "userTo": "Receiver",
+  "message": "Message content"
+}
+```
+
+## Which enhancements come to your mind when talking about chat software solutions?
+The application example has several limitations which should be implemented:
+
+- Security is not included
+- Communication is not restricted (everyone can send to everyone)
+- Payload is not validated
+- Error handling is not included
+- Tests are not included
