@@ -27,10 +27,14 @@ messaging URIs of the backend
 This example uses Java Websockets for message handling. Spring (Boot) Configuration is used where possible to keep the
 application code light weight and manual configuration to a minimum.
 
-- `ChatMessage.class` Domain object handling messaging content
-- `WebSocketConfiguration.class` Enables a message broker for topics (global communication) and queues (user-to-user configuration).
-- `CustomerSupportEventListener.class` Handles events for new client connections and broadcasts a message to a topic, agents should subscribe to
-- `CustomerSupportController.class` Handles user to user communication via messages
+- [ChatMessage](/src/main/java/com/example/chat/domain/ChatMessage.java)
+Domain object handling messaging content
+- [WebSocketConfiguration](/src/main/java/com/example/chat/configuration/WebSocketConfiguration.java)
+Enables a message broker for topics (global communication) and queues (user-to-user configuration).
+- [CustomerSupportEventListener](/src/main/java/com/example/chat/controller/CustomerSupportEventListener.java)
+Handles events for new client connections and broadcasts a message to a topic, agents should subscribe to
+- [CustomerSupportController](/src/main/java/com/example/chat/controller/CustomerSupportController.java)
+Handles user to user communication via messages
 
 ## How do classes interact?
 Backend classes interact with each other through Spring Boot functionality.
@@ -58,3 +62,4 @@ The application example has several limitations which should be implemented:
 - Payload is not validated
 - Error handling is not included
 - Tests are not included
+- Comments and documentation are not included
